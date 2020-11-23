@@ -1,6 +1,9 @@
 import ViteComponents from 'vite-plugin-components'
 
 module.exports = {
+  alias: {
+    '/@/': require('path').resolve(__dirname, './src')
+  },
   plugins: [
     ViteComponents({
       // relative paths to the directory to search for components.
@@ -20,7 +23,9 @@ module.exports = {
       // vite config
       // currently, vite does not provide an API for plugins to get the config https://github.com/vitejs/vite/issues/738
       // you will need to pass `alias` and `root` if you set them in vite config
-      alias: {},
+      alias: {
+        '/@/': require('path').resolve(__dirname, './src')
+      },
       root: process.cwd(),
     })
   ],
